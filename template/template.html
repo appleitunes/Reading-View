@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <base target="_parent">
+    </head>
+    <body>
+        <div id="options_container">
+            <div id="options">
+                <div class="option">
+                    <h1 style="text-decoration:underline">Settings</h1>
+                </div>
+                <div class="option">
+                    Night Mode
+                    <button style="float:right" onclick="toggleDarkMode()">Toggle</button>
+                </div>
+                <div class="option">
+                    <button style="float:left" onclick="incrementFontSize(-0.1)"> - </button>
+                    Font size
+                    <button style="float:right" onclick="incrementFontSize(0.1)"> + </button>
+                </div>
+                <div class="option">
+                    <button style="float:left" onclick="incrementWidth(-50)"> - </button>
+                    Page Width
+                    <button style="float:right" onclick="incrementWidth(50)"> + </button>
+                </div>
+                <div class="option">
+                    <button onclick="setDefault()">Default</button>
+                </div>
+            </div>
+        </div>
+        <div id="content">LOADING...</div>
+    </body>
+</html>

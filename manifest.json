@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Reading View",
+    "description": "Display only the content you need on any website.",
+    "version": "0.4.0",
+
+    "background": {
+        "page": "background.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+
+    "browser_action": {
+        "default_icon": "Icons/default.png"
+    },
+
+    "icons": { 
+        "16": "Icons/icon16.png",
+        "48": "Icons/icon48.png",
+        "128": "Icons/icon128.png"
+    },
+
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+
+    "web_accessible_resources": [
+        "template/template.js"
+    ]
+}
