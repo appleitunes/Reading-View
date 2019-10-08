@@ -130,6 +130,37 @@ function setDefault() {
 }
 
 /*************************************************************
+ * Clean the code
+ *************************************************************/
+function cleanHTML() {
+    let spans = document.getElementsByTagName("span");
+    for (i in spans) {
+        let span = spans[i];
+        if (span && span.innerHTML &&
+            span.firstChild && span.firstChild.innerText) {
+            span.innerHTML = span.firstChild.innerText;
+        }
+    }
+
+    let elements = document.getElementById("content").getElementsByTagName("*");
+    for (i in elements) {
+        let element = elements[i];
+        if (element) {
+            let tag = element.tagName;
+            if (!tag || (tag &&
+                !{"P":true,"IMG":true,"H1":true,
+                "H2":true,"H3":true,"H4":true,
+                "H5":true,"H6":true,"LI":true,
+                "A":true,"SPAN":true,"STRONG":true,
+                "I":true}[tag])) {
+                removeNode(element);
+            }
+        }
+    }
+}
+
+/*************************************************************
  * Code to execute on load
  *************************************************************/
 setAll();
+cleanHTML();
